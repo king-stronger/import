@@ -1,0 +1,10 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use Conventional Commits with emojis: ✨ feat, 🐛 fix, 📝 docs, 🎨 style, ♻️ refactor, ⚡ perf, ✅ test, 🔧 chore, 🚀 build, 👷 ci, 🔒 security. Write a short title (≤72 chars) and, if multiple changes exist, a detailed body explaining what changed and why, grouping related changes in bullet points. Format commits as <emoji> <type>(scope): <title> and optionally add a body with bullets."
+    }
+  ]
+}
