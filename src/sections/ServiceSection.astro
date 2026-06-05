@@ -1,0 +1,99 @@
+<section class="bg-freight-gray-0/30">
+    <div class="wrapper prose-lg">
+        <div class="prose">
+            <h2 class="text-2xl md:text-5xl font-semibold text-center">
+                Nos Services
+            </h2>
+    
+            <p class="text-center mx-auto">
+                Des solutions complètes pour accompagner vos activités commerciales au Mali, dans l'espace UEMOA et à l'international.
+            </p>
+        </div>
+
+        <ul>
+            <li>
+                <div class="img-wrapper">
+                    <img src="/services/banking.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Fournitures Bancaires</h3>
+                    <p>
+                        Équipements et consommables pour banques et institutions financières.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="img-wrapper">
+                    <img src="/services/warehouse.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Approvisionnement Professionnel</h3>
+                    <p>
+                        Fourniture de matériels informatiques, équipements industriels et mobilier.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="img-wrapper">
+                    <img src="/services/shipping.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Import-Export, Transit & Transport</h3>
+                    <p>
+                        Gestion des opérations d'importation, exportation, transit et transport de marchandises.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="img-wrapper">
+                    <img src="/services/money.jpg" alt="">
+                </div>
+                <div>
+                    <h3>Transfert d'Argent</h3>
+                    <p>
+                        Solutions de transfert de fonds pour particuliers et professionnels.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    @reference "../styles/global.css";
+
+    ul {
+        display: grid;
+        gap: 1rem 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    }
+
+    li {
+        @apply flex flex-col rounded-xl shadow;
+        
+        h3 {
+            @apply text-lg font-semibold;
+        }
+
+        p {
+            @apply text-base;
+        }
+
+        
+        .img-wrapper {
+            img {
+                height: 100%;
+                object-fit: cover;
+                @apply rounded-t-xl;
+            }
+        }
+
+        div:not(.img-wrapper){
+            @apply px-4 py-4 flex flex-col gap-2 rounded-b-xl bg-white/80 grow;
+        }
+    }
+
+</style>

@@ -1,0 +1,121 @@
+---
+import { ShieldCheck, FileText, Headphones, Truck } from "@lucide/astro";
+---
+
+<section>
+    <div class="wrapper prose-lg">
+        <div class="about-grid">
+            <div class="img-wrapper">
+                <img src="/about.jpg" alt="Import-export et logistique internationale" class="rounded-xl"/>
+            </div>
+
+            <div class="about-content flex flex-col gap-4 md:gap-6 items-start">
+                <h2 class="text-2xl md:text-4xl font-semibold text-teal-950">
+                    Simplifiez vos achats et vos opérations d’import-export
+                </h2>
+
+                <p class="text-base">
+                    MK SERVICES INTERNATIONAL vous aide à sécuriser vos approvisionnements en équipements professionnels, fournitures bancaires et matériels informatiques, tout en prenant en charge vos opérations d’import-export et de transit.
+                </p>
+
+                <p class="text-base">
+                    Nous gérons les contraintes logistiques et douanières pour vous permettre de gagner du temps, réduire les risques et vous concentrer sur votre activité.
+                </p>
+
+                <a href="#contact" class="btn-primary">
+                    Demander un devis
+                </a>
+            </div>
+        </div>
+
+        <ul>
+            <li class="fuds">
+                <div class="bg-cargo-orange-0 p-2 rounded-xl">
+                    <ShieldCheck size={48} class="stroke-cargo-orange-800" />
+                </div>
+
+                <p>
+                    Fournisseurs fiables et produits conformes aux standards internationaux.
+                </p>
+            </li>
+
+            <li class="fuds">
+                <div class="bg-cargo-orange-0 p-2 rounded-xl">
+                    <FileText size={48} class="stroke-cargo-orange-800" />
+                </div>
+
+                <p>
+                    Gestion complète des formalités d’import-export et douanières.
+                </p>
+            </li>
+
+            <li class="fuds">
+                <div class="bg-cargo-orange-0 p-2 rounded-xl">
+                    <Truck size={48} class="stroke-cargo-orange-800" />
+                </div>
+
+                <p>
+                    Suivi précis des expéditions pour limiter retards et pertes.
+                </p>
+            </li>
+
+            <li class="fuds">
+                <div class="bg-cargo-orange-0 p-2 rounded-xl">
+                    <Headphones size={48} class="stroke-cargo-orange-800" />
+                </div>
+
+                <p>
+                    Assistance réactive pour répondre rapidement à vos besoins.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    @reference "../styles/global.css";
+
+    .about-grid {
+        @apply gap-4 md:gap-8;
+
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    
+        .svg-primary {
+            @apply fill-teal-700;
+        }
+
+        .svg-secondary {
+            @apply fill-orange-600;
+        }
+    }
+
+    ul {
+        @apply gap-4 md:gap-8;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(125px, 100%), 1fr));    
+    }
+
+    .fuds {
+        @apply flex flex-col gap-2 items-center p-4 text-center;
+
+        p {
+            @apply text-sm md:text-base;
+        }
+    }
+
+    .img-wrapper {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .img-wrapper::after {
+        inset: 0;
+        position: absolute;
+        z-index: 10;
+        content: "";
+        background: linear-gradient(90deg, oklch(20.0% 0.068 256.0 / 0.25), oklch(33.6% 0.114 256.0 / 0.35));
+    }
+</style>
