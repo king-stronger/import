@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "mk-services",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -9,12 +9,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.6.1",
     "@lucide/astro": "^1.16.0",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.8",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "wrangler": "^4.98.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
