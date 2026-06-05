@@ -6,7 +6,7 @@ import { CircleX, Menu } from "@lucide/astro";
     <div class="wrapper py-2 flex items-center justify-between">
         <h1 class="md:text-xl font-bold">MK-Services</h1>
 
-        <nav>
+        <nav class="flex items-center gap-4">
             <div class="menu">
                 <a href="/" class="nav-link">Accueil</a>
                 <a href="/#about" class="nav-link">A propos</a>
@@ -15,7 +15,7 @@ import { CircleX, Menu } from "@lucide/astro";
                 <a href="/#contact" class="nav-link">Contact</a>
             </div>
 
-            <div id="menu-toggle" class="flex items-center gap-2">
+            <div id="menu-toggle">
                 <a href="/#contact" class="btn-primary py-1">Devis</a>
                 <button class="p-1 shadow bg-white/50 rounded">
                     <CircleX class="close-icon hidden" />
@@ -78,6 +78,7 @@ import { CircleX, Menu } from "@lucide/astro";
             .nav-link:hover {
                 @apply bg-freight-gray-200;
             }
+
         }
         
         @container (width >= 700px){
@@ -86,9 +87,23 @@ import { CircleX, Menu } from "@lucide/astro";
             .nav-link {
                 @apply font-semibold hover:text-logistics-blue-600
             }
+
         }
     }
 
+    #menu-toggle {
+        @container (width < 700px){
+            @apply flex items-center gap-2;
+        }
+
+        @container (width >= 700px){
+            button {
+                display: none;
+                background: red;
+            }
+        }
+    }
+    
     .menu.show {
         height: auto;
         visibility: visible;
