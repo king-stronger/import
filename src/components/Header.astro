@@ -1,0 +1,100 @@
+---
+import { CircleX, Menu } from "@lucide/astro";
+---
+
+<header>
+    <div class="wrapper py-2 flex items-center justify-between">
+        <h1 class="md:text-xl font-bold">MK-Services</h1>
+
+        <nav>
+            <div class="menu">
+                <a href="/" class="nav-link">Accueil</a>
+                <a href="/#about" class="nav-link">A propos</a>
+                <a href="/#catalogue" class="nav-link">Catalogue</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div id="menu-toggle" class="flex items-center gap-2">
+                <a href="/#contact" class="btn-primary py-1">Devis</a>
+                <button class="p-1 shadow bg-white/50 rounded">
+                    <CircleX class="close-icon hidden" />
+                    <Menu class="menu-icon" />
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        const menuIcon = button?.querySelector(".menu-icon");
+        const closeIcon = button?.querySelector(".close-icon");
+
+        button?.addEventListener("click", () => {
+            menu?.classList.toggle("show");
+
+            const isOpen = menu?.classList.contains("show");
+
+            menuIcon?.classList.toggle("hidden", isOpen);
+            closeIcon?.classList.toggle("hidden", !isOpen);
+        });
+    });
+</script>
+
+<style>
+    @reference "../styles/global.css";
+
+    header {
+        @apply bg-freight-gray-0;
+
+        z-index: 5;
+        position: sticky;
+        inset: 0 0 auto 0;
+        isolation: isolate;
+        container-type: inline-size;
+    }
+
+    .menu {
+        @container (width < 700px){
+            @apply flex flex-col bg-freight-gray-0 border-t border-freight-gray-900;
+            
+            position: absolute;
+            inset: 100% 0 auto 0;
+
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+            transition: height 300ms, visibility 300ms;
+
+
+            .nav-link {
+                @apply px-2 py-2 border-b border-freight-gray-200 hover:bg-logistics-blue-150;
+            }
+            
+            .nav-link:hover {
+                @apply bg-freight-gray-200;
+            }
+        }
+        
+        @container (width >= 700px){
+            @apply flex items-center gap-4;
+
+            .nav-link {
+                @apply font-semibold hover:text-logistics-blue-600
+            }
+        }
+    }
+
+    .menu.show {
+        height: auto;
+        visibility: visible;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
