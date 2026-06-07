@@ -3,21 +3,21 @@ import { CircleX, Menu } from "@lucide/astro";
 ---
 
 <header>
-    <div class="wrapper py-2 flex items-center justify-between">
-        <h1 class="md:text-xl font-bold">MK-Services</h1>
+    <div class="wrapper py-3 flex items-center justify-between">
+        <h1 class="md:text-xl font-bold text-white">MK-Services</h1>
 
         <nav class="flex items-center gap-4">
             <div class="menu">
                 <a href="/" class="nav-link">Accueil</a>
-                <a href="/#about" class="nav-link">A propos</a>
-                <a href="/#catalogue" class="nav-link">Catalogue</a>
-                <a href="/#services" class="nav-link">Services</a>
-                <a href="/#contact" class="nav-link">Contact</a>
+                <a href="/#about-section" class="nav-link">A propos</a>
+                <a href="/#catalogue-section" class="nav-link">Catalogue</a>
+                <a href="/#services-section" class="nav-link">Services</a>
+                <a href="/#partners-section" class="nav-link">Partenaires</a>
             </div>
 
-            <div id="menu-toggle">
-                <a href="/#contact" class="btn-primary py-1">Devis</a>
-                <button class="p-1 shadow bg-white/50 rounded">
+            <div id="menu-actions">
+                <a href="/#contact-section" class="btn-primary py-2">Devis</a>
+                <button id="menu-toggle" class="p-1 shadow bg-white/50 rounded">
                     <CircleX class="close-icon hidden" />
                     <Menu class="menu-icon" />
                 </button>
@@ -49,7 +49,7 @@ import { CircleX, Menu } from "@lucide/astro";
     @reference "../styles/global.css";
 
     header {
-        @apply bg-freight-gray-0;
+        @apply bg-logistics-blue-1000;
 
         z-index: 5;
         position: sticky;
@@ -60,7 +60,7 @@ import { CircleX, Menu } from "@lucide/astro";
 
     .menu {
         @container (width < 700px){
-            @apply flex flex-col bg-freight-gray-0 border-t border-freight-gray-900;
+            @apply flex flex-col bg-freight-gray-0;
             
             position: absolute;
             inset: 100% 0 auto 0;
@@ -72,7 +72,7 @@ import { CircleX, Menu } from "@lucide/astro";
 
 
             .nav-link {
-                @apply px-2 py-2 border-b border-freight-gray-200 hover:bg-logistics-blue-150;
+                @apply px-2 py-3 border-b border-freight-gray-100 hover:bg-logistics-blue-150;
             }
             
             .nav-link:hover {
@@ -85,13 +85,13 @@ import { CircleX, Menu } from "@lucide/astro";
             @apply flex items-center gap-4;
 
             .nav-link {
-                @apply font-semibold hover:text-logistics-blue-600
+                @apply font-semibold text-white hover:text-cargo-orange-300
             }
 
         }
     }
 
-    #menu-toggle {
+    #menu-actions {
         @container (width < 700px){
             @apply flex items-center gap-2;
         }
