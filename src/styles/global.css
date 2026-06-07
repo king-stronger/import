@@ -1,11 +1,15 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
 :root {
     transition-behavior: allow-discrete;
     interpolate-size: allow-keywords;
 }
 
-@import "tailwindcss";
-
 @theme {
+    --font-sans: var(--font-jakarta);
+    --font-jakarta: var(--font-jakarta);
+
     --color-logistics-blue-0: oklch(88.0% 0.040 256.0);
     --color-logistics-blue-50: oklch(84.6% 0.052 256.0);
     --color-logistics-blue-100: oklch(81.2% 0.064 256.0);
@@ -13,7 +17,8 @@
     --color-logistics-blue-200: oklch(74.4% 0.087 256.0);
     --color-logistics-blue-300: oklch(67.6% 0.110 256.0);
     --color-logistics-blue-400: oklch(60.8% 0.134 256.0);
-    --color-logistics-blue-500: oklch(54.0% 0.157 256.0);
+    --color-logistics-blue
+    -500: oklch(54.0% 0.157 256.0);
     --color-logistics-blue-600: oklch(47.2% 0.160 256.0);
     --color-logistics-blue-700: oklch(40.4% 0.138 256.0);
     --color-logistics-blue-800: oklch(33.6% 0.114 256.0);
@@ -54,7 +59,7 @@
 
     body {
         overflow-x: hidden;
-        @apply bg-white;
+        @apply bg-white font-sans;
     }
 
     section {
@@ -102,15 +107,15 @@
         @apply bg-white border border-gray-50/90;
     }
     
-    .prose > * + * {
+    .flow > * + * {
         margin-block-start: 1em;
     }
 
-    .prose-md > * + * {
+    .flow-md > * + * {
         margin-block-start: 2em;
     }
 
-    .prose-lg > * + * {
+    .flow-lg > * + * {
         margin-block-start: 3em;
     }
 
