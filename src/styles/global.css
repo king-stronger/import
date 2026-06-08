@@ -121,17 +121,17 @@
 
     /*********************************** BUTTONS ******************************************/
     .btn-primary {
-        @apply w-max px-6 py-2 text-center text-white rounded-lg bg-logistics-blue-600;
+        @apply w-max px-6 py-2 text-center text-white rounded-lg bg-cargo-orange-600;
     }
     
     .btn-secondary {
-        @apply w-max px-6 py-2 text-center text-white rounded-lg bg-cargo-orange-600;
+        @apply w-max px-6 py-2 text-center text-white rounded-lg bg-logistics-blue-600;
     }
 
     .btn-primary:hover {
         @apply bg-cargo-orange-700;
     }
-
+    
     .btn-secondary:hover {
         @apply bg-logistics-blue-700;
     }
